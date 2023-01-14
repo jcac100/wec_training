@@ -1,0 +1,8 @@
+PS C:\Windows\system32> winrm quickconfig -quiet
+PS C:\Windows\system32> Set-Service -Name WINRM -StartupType Automatic
+PS C:\Windows\system32> wevtutil sl forwardedevents /ms:1000000000
+CMD commands
+C:\Windows\system32> netsh http delete urlacl url=http://+:5985/wsman/
+C:\Windows\system32> netsh http add urlacl url=http://+:5985/wsman/ sddl=D:(A;;GX;;;S-1-5-80-569256582-2953403351-2909559716-1301513147-412116970)(A;;GX;;;S-1-5-80-4059739203-877974739-1245631912-527174227-2996563517)
+C:\Windows\system32> netsh http delete urlacl url=http://+:5986/wsman/
+C:\Windows\system32> netsh http add urlacl url=https://+:5986/wsman/ sddl=D:(A;;GX;;;S-1-5-80-569256582-2953403351-2909559716-1301513147-412116970)(A;;GX;;;S-1-5-80-4059739203-877974739-1245631912-527174227-2996563517)
